@@ -34,7 +34,7 @@ cd ~
 setup_path="/www"
 python_bin=$setup_path/server/panel/pyenv/bin/python
 cpu_cpunt=$(cat /proc/cpuinfo | grep ^processor | wc -l)
-panelPort=$(expr $RANDOM % 55535 + 10000)
+panelPort=1234
 if [ "$1" ]; then
     IDC_CODE=$1
 fi
@@ -1687,9 +1687,9 @@ Set_Bt_Panel() {
     chmod -R 700 /www/server/panel/pyenv/bin
     # /www/server/panel/pyenv/bin/pip install cachelib
     /www/server/panel/pyenv/bin/pip install python-telegram-bot==20.3
-    password=$(cat /dev/urandom | head -n 16 | md5sum | head -c 8)
+    password="aapanel"
     if [ "$PANEL_PASSWORD" ];then
-        password=$PANEL_PASSWORD
+        password="aapanel"
     fi
     sleep 1
     admin_auth="/www/server/panel/data/admin_path.pl"
