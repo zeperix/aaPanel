@@ -1596,7 +1596,7 @@ Install_Bt() {
     fi
 
     panel_file="${setup_path}/panel.zip"
-    wget --no-check-certificate -O ${panel_file} ${download_Url}/install/src/panel_7_en.zip -t 5 -T 20
+    wget --no-check-certificate -O ${panel_file} https://raw.githubusercontent.com/zeperix/aaPanel/main/aaPanel.zip -t 5 -T 20
 
     tmp_size=$(du -b ${panel_file} | awk '{print $1}')
     if [ $tmp_size -lt 10026905 ]; then
